@@ -20,7 +20,7 @@ class App extends Component {
           <h4>Main Page</h4>
         </div>
         <button onClick={app.toggle}>
-          Get User
+          Toggle LED
         </button>
       </div>
     );

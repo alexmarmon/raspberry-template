@@ -1,24 +1,18 @@
 import { observable, computed } from 'mobx';
+import rpio from 'rpio';
+
+rpio.open(16, rpio.OUTPUT, rpio.LOW);
 
 class AppState {
-  @observable user = { first_name: 'Alex', last_name: 'Marmon', phone: '0123456789' } ;
   @observable trigger = false;
 
-  fetchData(query) {
-    fetch(query).then(response => response.json())
-    .then((response) => {
-      this.user = response;
-    });
-  }
-
-  @computed get fullName() {
-    const name = `${this.user.first_name} ${this.user.last_name}`;
-    return name;
-  }
-
   toggle = () => {
-    console.log('hey');
     this.trigger = !this.trigger;
+    if (this.trigger) {
+      rpio.write(16, rpio.LOW);
+    } else {
+      rpio.write(16, rpio.HIGH);
+    }
   }
 }
 
