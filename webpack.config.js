@@ -6,7 +6,7 @@ const WriteFilePlugin = require('write-file-webpack-plugin');
 const config = {
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/',
   },
   resolve: {
@@ -59,7 +59,11 @@ if (process.env.npm_lifecycle_event === ('dev' || 'test')) {
 } else {
   config.output.publicPath = '/';
   config.devtool = 'cheap-module-source-map';
-  config.entry = ['whatwg-fetch', './src'];
+  // config.entry = ['whatwg-fetch', './src'];
+  config.entry = {
+    main: './src',
+    vendor: 'react'
+  };
   config.plugins = [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({
@@ -76,6 +80,9 @@ if (process.env.npm_lifecycle_event === ('dev' || 'test')) {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': "'production'",
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor' // Specify the common bundle's name.
+    })
   ];
 }
 
