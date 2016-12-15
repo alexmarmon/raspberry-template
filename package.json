@@ -1,0 +1,110 @@
+{
+  "name": "react-mobx-template",
+  "version": "1.0.0",
+  "description": "Template with React, MobX, Webpack 2, Hot Reload 3, Airbnb's ESLint, and an Express API",
+  "author": "Alex Marmon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexmarmon/react-mobx-template.git"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "lint": "eslint --ext .js --ext .jsx src/; exit 0",
+    "build": "webpack --progress && node server.js",
+    "test": "mocha src/tests/.setup.js src/tests/*test.jsx --timeout 10000; exit 0",
+    "production": "node server.js"
+  },
+  "keywords": [
+    "react",
+    "mobx",
+    "hot reload 3",
+    "template",
+    "starter-kit"
+  ],
+  "eslintConfig": {
+    "extends": "airbnb",
+    "parser": "babel-eslint",
+    "globals": {
+      "document": true,
+      "fetch": true,
+      "console": true,
+      "it": true,
+      "describe": true,
+      "window": true
+    },
+    "rules": {
+      "no-console": 0,
+      "window": 0,
+      "jsx-a11y/no-static-element-interactions": 0,
+      "radix": 0,
+      "forbid-prop-types": 0,
+      "react/forbid-prop-types": 0,
+      "no-nested-ternary": 0,
+      "max-len": 0
+    }
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "stage-1",
+      [
+        "es2015",
+        {
+          "modules": false
+        }
+      ]
+    ],
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-class-properties",
+      "react-hot-loader/babel"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015-native-modules": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "babel-register": "^6.16.3",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.7.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-loader": "^1.5.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "image-webpack-loader": "^2.0.0",
+    "jsdom": "^9.6.0",
+    "mocha": "^3.1.2",
+    "node-sass": "^3.10.1",
+    "react-addons-test-utils": "^15.3.2",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "compression": "^1.6.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "enzyme": "^2.4.1",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "mobx": "^2.2.2",
+    "mobx-react": "^3.3.1",
+    "mysql": "^2.11.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-favicon": "0.0.5",
+    "react-hot-loader": "^3.0.0-beta.2",
+    "react-router": "^2.8.1",
+    "webpack": "^2.1.0-beta.25",
+    "webpack-dev-server": "^2.1.0-beta.9",
+    "whatwg-fetch": "^1.0.0",
+    "write-file-webpack-plugin": "^3.4.2"
+  }
+}
