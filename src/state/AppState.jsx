@@ -1,5 +1,5 @@
-import { observable, computed } from 'mobx';
-import rpio from 'rpio';
+import { observable } from 'mobx';
+import { rpio } from 'rpio';
 
 rpio.open(16, rpio.OUTPUT, rpio.LOW);
 
