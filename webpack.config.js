@@ -9,9 +9,6 @@ const config = {
     filename: '[name].js',
     publicPath: '/',
   },
-	node: {
-		fs: 'empty',
-	},
   resolve: {
     extensions: ['.js', '.jsx'],
   },
