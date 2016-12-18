@@ -14,6 +14,7 @@ module.exports = (express) => {
   const rpio = require('rpio');
 
   // make sure that bad boy is off....
+  console.log('opening...');
   rpio.open(16, rpio.OUTPUT, rpio.LOW);
   var trigger = false;
 
@@ -24,12 +25,15 @@ module.exports = (express) => {
   }
 
   router.route('/toggle').get((req, res) => {
-    trigger = !trigger;
+    console.log('hit!');
+    console.log(trigger);
     if (trigger) {
       rpio.write(16, rpio.LOW);
     } else {
+      console.log('setting it to high....');
       rpio.write(16, rpio.HIGH);
     }
+    trigger = !trigger;
   });
 
   return router;
