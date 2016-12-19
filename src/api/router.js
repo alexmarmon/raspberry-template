@@ -1,15 +1,4 @@
 module.exports = (express) => {
-  // const fs = require('fs'); // eslint-disable-line global-require
-  // const mysql = require('mysql'); // eslint-disable-line global-require
-  //
-  // const creds = JSON.parse(fs.readFileSync('./creds.json'));
-  // const connection = mysql.createPool({
-  //   host: creds.host,
-  //   user: creds.user,
-  //   password: creds.password,
-  //   database: creds.database,
-  //   conrnectionLimit: 50,
-  // });
 
   const rpio = require('rpio');
 

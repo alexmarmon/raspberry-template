@@ -13,15 +13,13 @@ class App extends Component {
   render() {
     const app = this.props.appState;
     return (
-      <div>
+      <div className="content">
         <div id="header" className="header">
-          <h2>Raspberry</h2>
-          <h4>A simple start.</h4>
-          <h4>Main Page</h4>
+          <h2>Christmas Tree :)</h2>
         </div>
-        <button onClick={app.toggle}>
-          Toggle LED
-        </button>
+        <div onClick={app.toggle} className="toggleButton">
+          <p className="toggleButtonText">Toggle Lights</p>
+        </div>
       </div>
     );
   }
