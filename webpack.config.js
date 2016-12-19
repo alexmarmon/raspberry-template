@@ -59,10 +59,9 @@ if (process.env.npm_lifecycle_event === ('dev' || 'test')) {
 } else {
   config.output.publicPath = '/';
   config.devtool = 'cheap-module-source-map';
-  // config.entry = ['whatwg-fetch', './src'];
   config.entry = {
     main: './src',
-    vendor: 'react'
+    vendor: ['react', 'whatwg-fetch']
   };
   config.plugins = [
     new webpack.optimize.OccurrenceOrderPlugin(),

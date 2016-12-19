@@ -20,7 +20,6 @@ module.exports = (express) => {
     if (trigger) {
       rpio.write(16, rpio.LOW);
     } else {
-      console.log('setting it to high....');
       rpio.write(16, rpio.HIGH);
     }
     trigger = !trigger;
